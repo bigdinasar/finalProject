@@ -13,9 +13,97 @@
 <body>
     <div id="app">
         <!-- Content goes here -->
-        <img src="crime-o-mart.jpg">
+
+        <nav>
+            <div @click="goToPage(1)">Pg 1</div>
+            <div @click="goToPage(2)">Pg 2</div>
+            <div @click="goToPage(3)">Pg 3</div>
+        </nav>
+
+        <div class="page" v-if="page == 1">
+            <div class="wrapper">
+
+                <div class="cart">
+                    <div class="row-head">
+                        <div>Description</div>
+                        <div>
+                            Amount
+                        </div>
+                        <div>Category</div>
+                        <div></div>
+                    </div>
+                    
+                    <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
+                        <div>{{crime.crime_name}}</div>
+                        <div >{{exp.amount}}</div>
+                        <div>{{exp.category}}</div>
+                    </div> -->
+                    <div v-for="(crime, index) in cart" class="row-body">
+                        <div>{{crime.crime_name}}</div>
+                        <button @click="deleteCrime(index)">X</button>
+                    </div>
+                    <div class="row-footer">
+                        <div>TOTAL</div>
+                        <div v-bind:class="[{green: balance > 0 }, {red: balance <= 0 }]">{{balance}}</div>
+                        <div></div>
+                        <div></div>
+
+                    </div>
+                </div>
+
+                <div class="setting1">
+                    <img src="codeschool-crime-project.png" alt="crimeScene" usemap="#workmap">
+                    <map name="workmap" @click="goToPage(2)">
+                        <area shape="rect" coords="34,44,270,350" alt="Enter">
+                      </map>
+                </div>
+
+            </div>
+        </div>
+        <div class="page" v-if="page == 2">
+            <div class="wrapper">
+
+                <div class="cart">
+                    <div class="row-head">
+                        <div>Description</div>
+                        <div>
+                            Amount
+                        </div>
+                        <div>Category</div>
+                        <div></div>
+                    </div>
+                    
+                    <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
+                        <div>{{crime.crime_name}}</div>
+                        <div >{{exp.amount}}</div>
+                        <div>{{exp.category}}</div>
+                    </div> -->
+                    <div v-for="(crime, index) in cart" class="row-body">
+                        <div>{{crime.crime_name}}</div>
+                        <button @click="deleteCrime(index)">X</button>
+                    </div>
+                    <div class="row-footer">
+                        <div>TOTAL</div>
+                        <div v-bind:class="[{green: balance > 0 }, {red: balance <= 0 }]">{{balance}}</div>
+                        <div></div>
+                        <div></div>
+
+                    </div>
+                </div>
+
+                <div class="setting2">
+                    <img src="Crime-Aisle.png" alt="crimeAisle" usemap="#workmap">
+                    <map name="workmap" @click="goToPage(1)">
+                        <area shape="rect" coords="34,44,270,350" alt="Enter">
+                      </map>
+                </div>
+
+            </div>
+        </div>
+        
     </div>
     <script src="app.js"></script>
+    <script src="imageMapResizer.js"></script>
 </body>
 
 </html>
