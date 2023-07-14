@@ -66,3 +66,5 @@ Vue.createApp({
         }
     }
 }).mount("#app");
+
+imageMapResize();

@@ -15,6 +15,7 @@ nav {
     flex-flow: row;
 }
 
+
 .cart {
     display: grid;
     width: 20vw;
@@ -23,6 +24,10 @@ nav {
 
 map {
     cursor: pointer;
+}
+
+map :hover {
+    color: aliceblue;
 }
 
 .setting1 {
