@@ -17,7 +17,7 @@ const clearanceList = [
   "Arson damages ranging from $1500 to $5000",
   "Arson damages under $500",
   "Driving a car with tinted windows",
-  "Driving a car with tail lights",
+  "Driving a car without tail lights",
   "Driving an unsafe vehicle",
   "Forging a prescription",
 ];
