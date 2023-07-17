@@ -23,32 +23,29 @@ const clearanceList = [
 ];
 
 const theftList = [
-  // "Theft of items under $500",
-  // "Theft of items ranging from $500 to $1500",
-  // "Theft of items ranging from $1500 to $5000",
-  // "Theft of items exceeding $5000",
   "Burglarizing a commercial location",
   "Burglarizing a dwelling",
   "Stealing an organ",
-  "Stealing Jewlery (under $500)",
+  "Stealing jewelry (under $500)",
   "Stealing a television (under $500)",
   "Stealing a bicycle ($1500-$5000)",
   "Stealing a couch ($1500-$5000)",
-  "Stealing a car ($1500-$5000)",
-  "Stealing a motorcycle ($1500-$5000)",
+  "Stealing a generator",
+  "Stealing a bed",
+  "Stealing a car (exceeding $5000)",
   "Stealing a train (exceeding $5000)",
-  "Stealing a bridge (exceeding $5000)",
+  ,
 ];
 
 const assaultList = [
-  "Commiting murder",
+  "Committing murder",
   "Causing bodily injury to an innocent bystander",
   "Causing serious bodily injury to an innocent bystander",
   "Causing an innocent bystander to lose consciousness",
   "Causing bodily injury to law enforcement",
   "Causing serious bodily injury to a bystander through arson",
   "Causing substantial bodily injury to a bystander through arson",
-  "Commiting arson in a way that endangers human life",
+  "Committing arson in a way that endangers human life",
   "Stalking",
 ];
 
@@ -76,14 +73,14 @@ const trafficList = [
 ];
 
 const drugsList = [
-  "Possesion of drug paraphernalia",
+  "Possession of drug paraphernalia",
   "Sale of drug paraphernalia",
-  "Sale of drugs to a minor",
+  "Sale of drug paraphernalia to a minor",
   "Selling marijuana",
   "Possession of marijuana",
   "Cultivating marijuana",
-  "Possession of cocain",
-  "Selling cocain",
+  "Possession of cocaine",
+  "Selling cocaine",
   "Possession of heroin",
   "Selling heroin",
   "Possession of meth",
