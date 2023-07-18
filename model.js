@@ -34,7 +34,6 @@ const theftList = [
   "Stealing a bed",
   "Stealing a car (exceeding $5000)",
   "Stealing a train (exceeding $5000)",
-  ,
 ];
 
 const assaultList = [
@@ -97,6 +96,7 @@ const CrimeSchema = Schema({
   category: {
     type: String,
     required: [true, "Crime must have a category."],
+    // ["theft", "assault", "traffic", "drugs", "clearance"]
   },
   max_penalty: {
     type: Number,
