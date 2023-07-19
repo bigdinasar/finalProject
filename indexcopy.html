@@ -90,31 +90,31 @@
               <area
                 shape="rect"
                 coords="15,200,160,720"
-                @click="goToPage(3)"
+                @click="goToPage(3); buildShelf(theft) "
                 alt="Theft"
               />
               <area
                 shape="rect"
                 coords="220,200,365,720"
-                @click="goToPage(4)"
+                @click="goToPage(4); buildShelf(assault) "
                 alt="Assault"
               />
               <area
                 shape="rect"
                 coords="435,200,580,720"
-                @click="goToPage(5)"
+                @click="goToPage(5); buildShelf(traffic) "
                 alt="Traffic"
               />
               <area
                 shape="rect"
                 coords="640,200,782,720"
-                @click="goToPage(6)"
+                @click="goToPage(6); buildShelf(drugs) "
                 alt="Drugs"
               />
               <area
                 shape="rect"
                 coords="840,200,984,720"
-                @click="goToPage(7)"
+                @click="goToPage(7); buildShelf(clearance) "
                 alt="Clearance"
               />
             </map>
@@ -131,11 +131,13 @@
               <div></div>
             </div>
 
-            <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
-                        <div>{{crime.crime_name}}</div>
-                        <div >{{exp.amount}}</div>
-                        <div>{{exp.category}}</div>
-                    </div> -->
+            <div class="shelves">
+              <div v-for="sherf in shelf" class="shelf">
+                  <div v-for="item in sherf">
+                      <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
+                  </div>
+              </div>
+          </div>
             <div v-for="(crime, index) in cart" class="row-body">
               <div>{{crime.crime_name}}</div>
               <button @click="deleteCrime(index)">X</button>
@@ -323,7 +325,7 @@
         </div>
       </div>
     </div>
-    <script src="appcopy.js"></script>
+    <script src="app.js"></script>
     <script src="imageMapResizer.js"></script>
   </body>
 </html>
