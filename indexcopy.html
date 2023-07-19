@@ -131,12 +131,7 @@
               <div></div>
             </div>
 
-            <div class="shelves">
-              <div v-for="sherf in shelf" class="shelf">
-                  <div v-for="item in sherf">
-                      <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
-                  </div>
-              </div>
+
           </div>
             <div v-for="(crime, index) in cart" class="row-body">
               <div>{{crime.crime_name}}</div>
@@ -153,10 +148,12 @@
           </div>
 
           <div class="setting1">
-            <img src="334366.png" alt="crimeScene" usemap="#workmap" />
-            <map name="workmap" @click="goToPage(2)">
-              <area shape="rect" coords="385,360,580,490" alt="Enter" />
-            </map>
+            <div class="shelves">
+              <div v-for="sherf in shelf" class="shelf">
+                  <div v-for="item in sherf">
+                      <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
+                  </div>
+              </div>
           </div>
         </div>
       </div>
@@ -164,7 +161,7 @@
         <div class="wrapper">
           <div class="cart">
             <div class="row-head">
-              <div>Description</div>
+              <div>Descriptions</div>
               <div>Amount</div>
               <div>Category</div>
               <div></div>
