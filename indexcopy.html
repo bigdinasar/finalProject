@@ -14,15 +14,15 @@
     <div id="app">
       <!-- Content goes here -->
 
+      <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- page 1  page 1  page 1  page 1  page 1  page 1  page 1  page 1  page 1  page 1  page 1 -->
+
       <div class="page" v-if="page == 1">
         <div class="wrapper">
+          <div class="home">
+            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
+          </div>
           <div class="cart">
-            <div class="row-head">
-              <div>Description</div>
-              <div>Amount</div>
-              <div>Category</div>
-              <div></div>
-            </div>
 
             <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
                         <div>{{crime.crime_name}}</div>
@@ -43,7 +43,7 @@
             </div>
           </div>
 
-          <div class="setting1">
+          <div class="setting">
             <img
               src="codeschool-crime-project.png"
               alt="crimeScene"
@@ -55,15 +55,18 @@
           </div>
         </div>
       </div>
+
+
+      <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- page 2  page 2  page 2  page 2  page 2  page 2  page 2  page 2  page 2  page 2  page 2 -->
+
+
       <div class="page" v-if="page == 2">
         <div class="wrapper">
+          <div class="home">
+            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
+          </div>
           <div class="cart">
-            <div class="row-head">
-              <div>Description</div>
-              <div>Amount</div>
-              <div>Category</div>
-              <div></div>
-            </div>
 
             <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
                         <div>{{crime.crime_name}}</div>
@@ -84,7 +87,7 @@
             </div>
           </div>
 
-          <div class="setting2">
+          <div class="setting">
             <img src="Crime-Aisle.png" alt="crimeAisle" usemap="#workmap" />
             <map name="workmap">
               <area
@@ -96,7 +99,7 @@
               <area
                 shape="rect"
                 coords="220,200,365,720"
-                @click="goToPage(4); buildShelf(assault) "
+                @click="goToPage(4)"
                 alt="Assault"
               />
               <area
@@ -121,18 +124,17 @@
           </div>
         </div>
       </div>
+
+      <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- page 3  page 3  page 3  page 3  page 3  page 3  page 3  page 3  page 3  page 3  page 3 -->
+
       <div class="page" v-if="page == 3">
         <div class="wrapper">
-          <div class="cart">
-            <div class="row-head">
-              <div>Description</div>
-              <div>Amount</div>
-              <div>Category</div>
-              <div></div>
-            </div>
-
-
+          <div class="home">
+            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
           </div>
+          <div class="cart">
+            
             <div v-for="(crime, index) in cart" class="row-body">
               <div>{{crime.crime_name}}</div>
               <button @click="deleteCrime(index)">X</button>
@@ -142,30 +144,26 @@
               <div v-bind:class="[{green: balance > 0 }, {red: balance <= 0 }]">
                 {{balance}}
               </div>
-              <div></div>
-              <div></div>
             </div>
           </div>
 
           <div class="setting1">
             <div class="shelves">
               <div v-for="sherf in shelf" class="shelf">
-                  <div v-for="item in sherf">
-                      <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
-                  </div>
+                <div v-for="item in sherf">
+                  <img v-bind:src="item.image" alt="crimeScene" @click="goToPage(2)">
+                </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
       <div class="page" v-if="page == 4">
         <div class="wrapper">
+          <div class="home">
+            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
+          </div>
           <div class="cart">
-            <div class="row-head">
-              <div>Descriptions</div>
-              <div>Amount</div>
-              <div>Category</div>
-              <div></div>
-            </div>
 
             <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
                         <div>{{crime.crime_name}}</div>
@@ -200,13 +198,10 @@
       </div>
       <div class="page" v-if="page == 5">
         <div class="wrapper">
+          <div class="home">
+            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
+          </div>
           <div class="cart">
-            <div class="row-head">
-              <div>Description</div>
-              <div>Amount</div>
-              <div>Category</div>
-              <div></div>
-            </div>
 
             <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
                         <div>{{crime.crime_name}}</div>
@@ -241,13 +236,10 @@
       </div>
       <div class="page" v-if="page == 6">
         <div class="wrapper">
+          <div class="home">
+            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
+          </div>
           <div class="cart">
-            <div class="row-head">
-              <div>Description</div>
-              <div>Amount</div>
-              <div>Category</div>
-              <div></div>
-            </div>
 
             <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
                         <div>{{crime.crime_name}}</div>
@@ -312,6 +304,44 @@
           <div class="setting1">
             <img
               src="GAWS_WinterAppeal23-CTA-dog.png"
+              alt="crimeScene"
+              usemap="#workmap"
+            />
+            <map name="workmap" @click="goToPage(2)">
+              <area shape="rect" coords="385,360,580,490" alt="Enter" />
+            </map>
+          </div>
+        </div>
+      </div>
+      <div class="page" v-if="page == 8">
+        <div class="wrapper">
+          <div class="home">
+            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
+          </div>
+          <div class="cart">
+
+            <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
+                        <div>{{crime.crime_name}}</div>
+                        <div >{{exp.amount}}</div>
+                        <div>{{exp.category}}</div>
+                    </div> -->
+            <div v-for="(crime, index) in cart" class="row-body">
+              <div>{{crime.crime_name}}</div>
+              <button @click="deleteCrime(index)">X</button>
+            </div>
+            <div class="row-footer">
+              <div>TOTAL</div>
+              <div v-bind:class="[{green: balance > 0 }, {red: balance <= 0 }]">
+                {{balance}}
+              </div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+
+          <div class="setting">
+            <img
+              src="crime-checkout.png"
               alt="crimeScene"
               usemap="#workmap"
             />
