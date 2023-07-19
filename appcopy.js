@@ -15,6 +15,7 @@ Vue.createApp({
       traffic: [],
       drugs: [],
       clearance: [],
+      shelf: [],
     };
   },
   methods: {
@@ -52,7 +53,7 @@ Vue.createApp({
         shelves.push(rowList);
         rowList = [];
       }
-      return shelves;
+      this.shelf = shelves;
     },
   },
   created: function () {
