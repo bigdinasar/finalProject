@@ -206,7 +206,7 @@ Vue.createApp({
           category: "traffic",
           max_penalty: 1000,
           jail_time: 0.5,
-          image: "fpImages/weed-png",
+          image: "fpImages/weed.png",
         },
         {
           crime_name: "Unsafe lane travel",
@@ -227,7 +227,7 @@ Vue.createApp({
           category: "traffic",
           max_penalty: 500,
           jail_time: 1,
-          image: "fpImages/jumpt-pencil.png",
+          image: "fpImages/jumpy-pencil.png",
         },
         {
           crime_name: "Driving with expired registration",
@@ -482,7 +482,7 @@ Vue.createApp({
           category: "traffic",
           max_penalty: 240,
           jail_time: 0,
-          image: "fpImages/stool-dog.png",
+          image: "fpImages/stool-dog.webp",
         },
         {
           crime_name: "Forging a prescription",
@@ -492,18 +492,11 @@ Vue.createApp({
           image: "fpImages/tab.png",
         },
       ],
+      totalTime: 0,
+      totalFine: 0,
     };
   },
   methods: {
-    // getCrimes: function () {
-    //   fetch("http://localhost:8080/crimes").then((data) => {
-    //     this.crimes.append(data.json);
-
-    //     for (crime of crimes) {
-    //       this.crime[category].append(crime);
-    //     }
-    //   });
-    // },
     goToPage: function (page) {
       this.page = page;
     },
@@ -537,12 +530,15 @@ Vue.createApp({
       console.log("shelf: ", this.shelf);
     },
     payItem: function (crime) {
+      this.totalTime += crime.jail_time;
+      this.totalFine += crime.max_penalty;
+
       this.cart[String(crime.category)].push(crime);
+      this.cart.cart.pop();
     },
   },
   created: function () {
     // this.getCrimes()
-    console.log(this.buildShelf(this.cart.theft));
   },
   computed: {
     balance() {},
