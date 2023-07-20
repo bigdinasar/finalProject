@@ -330,7 +330,7 @@
               usemap="#workmap"
             />
             <div id="checkoutDisplay">
-              <img v-bind:src="cart.cart[(cart.cart.length-1)].image" alt="crimeScene" @click="payItem(cart.cart.length-1)">
+          <img v-bind:src="cart.cart[(cart.cart.length-1)].image" alt="crimeScene" @click="payItem(cart.cart[cart.cart.length-1])">
             </div>
             <map name="workmap" @click="goToPage(2)">
               <area shape="rect" coords="385,360,580,490" alt="Enter" />
