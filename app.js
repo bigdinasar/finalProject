@@ -512,7 +512,9 @@ Vue.createApp({
 
       this.cart.cart.push(crime);
 
-      this.page = 8;
+      if (this.cart.cart.length == 10) {
+        this.page = 8;
+      }
     },
     buildShelf: function (crimes) {
       // consumes a list of crimes and returns a list of 3 lists that evenly divides out the crimes
