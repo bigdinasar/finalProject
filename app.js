@@ -5,6 +5,7 @@ Vue.createApp({
       // crimes: [],
       shelf: [],
       cart: {
+        cart: [],
         theft: [],
         assault: [],
         traffic: [],
@@ -509,14 +510,18 @@ Vue.createApp({
     addCrime: function (crime) {
       //add crime to cart (in specific category)
 
-      this.cart[String(crime.category)].push(crime);
+      this.cart.cart.push(crime);
+
+      if (this.cart.cart.length == 10) {
+        this.page = 8;
+      }
     },
     buildShelf: function (crimes) {
-      // consumes a list of crimes and returns a list of 3 lists that evenly divides out the crimes
+      // consumes a list of crimes and returns a list of 4 lists that evenly divides out the crimes
       const crimeList = crimes;
       var total = crimeList.length;
-      let perRow = Math.ceil(crimeList.length / 3);
-      var rows = [perRow, perRow, total - perRow * 2];
+      let perRow = Math.ceil(crimeList.length / 4);
+      var rows = [perRow, perRow, perRow, total - perRow * 3];
       var shelves = [];
 
       for (let row of rows) {
@@ -530,6 +535,9 @@ Vue.createApp({
       }
       this.shelf = shelves;
       console.log("shelf: ", this.shelf);
+    },
+    payItem: function (crime) {
+      this.cart[String(crime.category)].push(crime);
     },
   },
   created: function () {
