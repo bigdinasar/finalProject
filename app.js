@@ -530,11 +530,13 @@ Vue.createApp({
       console.log("shelf: ", this.shelf);
     },
     payItem: function (crime) {
-      this.totalTime += crime.jail_time;
-      this.totalFine += crime.max_penalty;
+      if (this.cart.cart.length != 0) {
+        this.totalTime += crime.jail_time;
+        this.totalFine += crime.max_penalty;
 
-      this.cart[String(crime.category)].push(crime);
-      this.cart.cart.pop();
+        this.cart[String(crime.category)].push(crime);
+        this.cart.cart.pop();
+      }
     },
   },
   created: function () {
