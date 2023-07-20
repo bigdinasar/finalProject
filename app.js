@@ -517,11 +517,11 @@ Vue.createApp({
       }
     },
     buildShelf: function (crimes) {
-      // consumes a list of crimes and returns a list of 3 lists that evenly divides out the crimes
+      // consumes a list of crimes and returns a list of 4 lists that evenly divides out the crimes
       const crimeList = crimes;
       var total = crimeList.length;
-      let perRow = Math.ceil(crimeList.length / 3);
-      var rows = [perRow, perRow, total - perRow * 2];
+      let perRow = Math.ceil(crimeList.length / 4);
+      var rows = [perRow, perRow, perRow, total - perRow * 3];
       var shelves = [];
 
       for (let row of rows) {
