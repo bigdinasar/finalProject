@@ -492,6 +492,8 @@ Vue.createApp({
           image: "fpImages/tab.png",
         },
       ],
+      totalTime: 0,
+      totalFine: 0,
     };
   },
   methods: {
@@ -537,12 +539,15 @@ Vue.createApp({
       console.log("shelf: ", this.shelf);
     },
     payItem: function (crime) {
+      this.totalTime += crime.jail_time;
+      this.totalFine += crime.max_penalty;
+
       this.cart[String(crime.category)].push(crime);
+      this.cart.cart.pop();
     },
   },
   created: function () {
     // this.getCrimes()
-    console.log(this.buildShelf(this.cart.theft));
   },
   computed: {
     balance() {},
