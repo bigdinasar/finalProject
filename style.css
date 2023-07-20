@@ -92,6 +92,21 @@ map :hover {
     border: 1px solid;
 }
 
+#checkoutDisplay {
+    position: fixed;
+    z-index: 10;
+    top: 55vh;
+    left: 500px;
+    width: 15vh;
+    height: 15vh;
+    border: 1px solid;
+}
+
+#checkoutDisplay img {
+    width: 10vh;
+    height: 10vh;
+}
+
 .setting {
     grid-column: 2/4;
     grid-row: 1/3;
