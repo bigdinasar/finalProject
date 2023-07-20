@@ -31,7 +31,6 @@
                     </div> -->
             <div v-for="(crime, index) in cart" class="row-body">
               <div>{{crime.crime_name}}</div>
-              <button @click="deleteCrime(index)">X</button>
             </div>
             <div class="row-footer">
               <div>TOTAL</div>
@@ -75,7 +74,6 @@
                     </div> -->
             <div v-for="(crime, index) in cart" class="row-body">
               <div>{{crime.crime_name}}</div>
-              <button @click="deleteCrime(index)">X</button>
             </div>
             <div class="row-footer">
               <div>TOTAL</div>
@@ -135,9 +133,8 @@
           </div>
           <div class="cart">
             
-            <div v-for="(crime, index) in cart" class="row-body">
-              <div>{{crime.crime_name}}</div>
-              <button @click="deleteCrime(index)">X</button>
+            <div v-for="item in cart.cart" class="row-body">
+              <div>{{item.crime_name}}</div>
             </div>
             <div class="row-footer">
               <div>TOTAL</div>
@@ -172,7 +169,6 @@
                     </div> -->
             <div v-for="(crime, index) in cart" class="row-body">
               <div>{{crime.crime_name}}</div>
-              <button @click="deleteCrime(index)">X</button>
             </div>
             <div class="row-footer">
               <div>TOTAL</div>
@@ -208,7 +204,6 @@
                     </div> -->
             <div v-for="(crime, index) in cart" class="row-body">
               <div>{{crime.crime_name}}</div>
-              <button @click="deleteCrime(index)">X</button>
             </div>
             <div class="row-footer">
               <div>TOTAL</div>
@@ -244,7 +239,6 @@
                     </div> -->
             <div v-for="(crime, index) in cart" class="row-body">
               <div>{{crime.crime_name}}</div>
-              <button @click="deleteCrime(index)">X</button>
             </div>
             <div class="row-footer">
               <div>TOTAL</div>
@@ -318,7 +312,6 @@
                     </div> -->
             <div v-for="(crime, index) in cart" class="row-body">
               <div>{{crime.crime_name}}</div>
-              <button @click="deleteCrime(index)">X</button>
             </div>
             <div class="row-footer">
               <div>TOTAL</div>
