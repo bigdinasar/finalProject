@@ -26,7 +26,7 @@ button {
 .shelves {
     width: 80%;
     height: 100vh;
-    margin: 10px;
+    margin: 0px 10px;
     background-color: burlywood;
     border: 1px solid;
     display: flex;
@@ -57,7 +57,9 @@ button {
 .cart {
     grid-column: 1/2;
     grid-row:2/3;
-    display: grid;
+    display: flex;
+    flex-flow: column;
+    gap:5Spx;
     width: 22vw;
     height: 66.6vh;
     padding-left: 1vw;
@@ -94,9 +96,9 @@ map :hover {
 }
 
 #checkoutDisplay {
-    position: fixed;
+    position: absolute;
     z-index: 10;
-    top: 56vh;
+    top: 58vh;
     left: 600px;
     width: 15vh;
     height: 15vh;
@@ -145,7 +147,6 @@ map :hover {
 }
 
 .row-head img {
-    height: 21vh;
     width: auto;
     border: 5px solid;
     border-radius: 10px;
@@ -153,7 +154,16 @@ map :hover {
 
 .row-head {
     grid-row: 1/2;
-    grid-column: 1/2;
+}
+
+.scrill {
+    overflow-y: scroll;
+    grid-row: 2/3;
+    height: 50vh
+}
+
+.row-footer {
+    grid-row: 4/5;
 }
 
 .row-body, .row-head, .row-footer {
@@ -161,7 +171,20 @@ map :hover {
     display: grid;
     grid-template-columns: 4fr 2fr 3fr;
     background-color: rgba(255,255,255,.2);
-    align-items: center;
     padding: 12px 5px;
     margin: 6px 6px;
+}
+
+.row-body {
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 4fr 2fr 3fr;
+    background-color: rgba(255,255,255,.2);
+    padding: 12px 5px;
+    margin: 6px 6px;
+}
+
+.row-body {
+    gap: 12px;
+    height: fit-content;
 }

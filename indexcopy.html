@@ -20,7 +20,7 @@
       <div class="page" v-if="page == 1">
         <div class="wrapper">
           <div class="home">
-            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
+            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
 
@@ -63,7 +63,7 @@
       <div class="page" v-if="page == 2">
         <div class="wrapper">
           <div class="home">
-            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
+            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
 
@@ -91,31 +91,31 @@
               <area
                 shape="rect"
                 coords="15,200,160,720"
-                @click="goToPage(3); buildShelf(theft) "
+                @click="goToPage(3)"
                 alt="Theft"
               />
               <area
                 shape="rect"
                 coords="220,200,365,720"
-                @click="goToPage(4); buildShelf(assault) "
+                @click="goToPage(4)"
                 alt="Assault"
               />
               <area
                 shape="rect"
                 coords="435,200,580,720"
-                @click="goToPage(5); buildShelf(traffic) "
+                @click="goToPage(5) "
                 alt="Traffic"
               />
               <area
                 shape="rect"
                 coords="640,200,782,720"
-                @click="goToPage(6); buildShelf(drugs) "
+                @click="goToPage(6)"
                 alt="Drugs"
               />
               <area
                 shape="rect"
                 coords="840,200,984,720"
-                @click="goToPage(7); buildShelf(clearance) "
+                @click="goToPage(7)"
                 alt="Clearance"
               />
             </map>
@@ -129,24 +129,19 @@
       <div class="page" v-if="page == 3">
         <div class="wrapper">
           <div class="home">
-            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
+            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
             
             <div v-for="item in cart.cart" class="row-body">
-              <div>{{item.crime_name}}</div>
-            </div>
-            <div class="row-footer">
-              <div>TOTAL</div>
-              <div v-bind:class="[{green: balance > 0 }, {red: balance <= 0 }]">
-                {{balance}}
-              </div>
+                <div>{{item.crime_name}}</div>
             </div>
           </div>
 
           <div class="setting1">
             <div class="shelves">
-              <div v-for="sherf in shelf" class="shelf">
+              <button @click="goToPage(2)">Back</button>
+              <div v-for="sherf in theftShelf" class="shelf">
                 <div v-for="item in sherf">
                   <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
                 </div>
@@ -161,31 +156,16 @@
             <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
           </div>
           <div class="cart">
-
-            <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
-                        <div>{{crime.crime_name}}</div>
-                        <div >{{exp.amount}}</div>
-                        <div>{{exp.category}}</div>
-                    </div> -->
-            <div v-for="(crime, index) in cart" class="row-body">
-              <div>{{crime.crime_name}}</div>
-            </div>
-            <div class="row-footer">
-              <div>TOTAL</div>
-              <div>
-                {{totalFine}}
-              </div>
-              <div>
-                {{totalTime}}
-              </div>
-              <div></div>
+            
+            <div v-for="item in cart.cart" class="row-body">
+                <div>{{item.crime_name}}</div>
             </div>
           </div>
           <div class="setting1">
             <div class="shelves">
-              <div v-for="sherf in shelf" class="shelf">
+              <div v-for="sherf in assaultShelf" class="shelf">
                 <div v-for="item in sherf">
-                  <img v-bind:src="item.image" alt="crimeScene" @click="goToPage(2)">
+                  <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
                 </div>
               </div>
             </div>
@@ -195,7 +175,7 @@
       <div class="page" v-if="page == 5">
         <div class="wrapper">
           <div class="home">
-            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
+            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
 
@@ -218,7 +198,7 @@
           </div>
           <div class="setting1">
             <div class="shelves">
-              <div v-for="sherf in shelf" class="shelf">
+              <div v-for="sherf in trafficShelf" class="shelf">
                 <div v-for="item in sherf">
                   <img v-bind:src="item.image" alt="crimeScene" @click="goToPage(2)">
                 </div>
@@ -230,7 +210,7 @@
       <div class="page" v-if="page == 6">
         <div class="wrapper">
           <div class="home">
-            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
+            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
 
@@ -253,9 +233,9 @@
           </div>
           <div class="setting1">
             <div class="shelves">
-              <div v-for="sherf in shelf" class="shelf">
+              <div v-for="sherf in drugsShelf" class="shelf">
                 <div v-for="item in sherf">
-                  <img v-bind:src="item.image" alt="crimeScene" @click="goToPage(2)">
+                  <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
                 </div>
               </div>
             </div>
@@ -265,7 +245,7 @@
       <div class="page" v-if="page == 7">
         <div class="wrapper">
           <div class="home">
-            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
+            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
 
@@ -291,9 +271,9 @@
 
           <div class="setting1">
             <div class="shelves">
-              <div v-for="sherf in shelf" class="shelf">
+              <div v-for="sherf in clearanceShelf" class="shelf">
                 <div v-for="item in sherf">
-                  <img v-bind:src="item.image" alt="crimeScene" @click="goToPage(2)">
+                  <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
                 </div>
               </div>
             </div>
@@ -303,7 +283,7 @@
       <div class="page" v-if="page == 8">
         <div class="wrapper">
           <div class="home">
-            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
+            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
 
@@ -313,12 +293,13 @@
               <div>TIME</div>
             </div>
 
-
-            <div v-for="item in receipt">
-              <div v-for="crime in item" class="row-body"> 
-                <div> {{crime.crime_name}}</div>
-                <div>{{crime.max_penalty}}</div>
-                <div>{{crime.jail_time}}</div>
+            <div class="scrill">
+              <div v-for="item in receipt">
+                <div v-for="crime in item" class="row-body"> 
+                  <div> {{crime.crime_name}}</div>
+                  <div>{{crime.max_penalty}}</div>
+                  <div>{{crime.jail_time}}</div>
+                </div>
               </div>
             </div>
             <div class="row-footer">
@@ -331,6 +312,8 @@
               </div>
             </div>
           </div>
+
+          
 
           <div class="setting">
             <img
@@ -345,6 +328,7 @@
               <area shape="rect" coords="385,360,580,490" alt="Enter" />
             </map>
           </div>
+        </div>
         </div>
       </div>
     </div>

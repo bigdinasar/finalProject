@@ -19,6 +19,11 @@ Vue.createApp({
         drugs: [],
         clearance: []
       },
+      theftShelf: [],
+      assaultShelf: [],
+      trafficShelf: [],
+      drugsShelf: [],
+      clearanceShelf: [],
       theft: [
         {
           crime_name: "Burglarizing a commercial location",
@@ -512,6 +517,8 @@ Vue.createApp({
 
       this.cart.cart.push(crime);
 
+      console.log("cart crime name: ", crime.crime_name)
+
       if (this.cart.cart.length == 10) {
         this.page = 8;
       }
@@ -524,6 +531,9 @@ Vue.createApp({
       var rows = [perRow, perRow, perRow, total - perRow * 3];
       var shelves = [];
 
+      console.log("crimes: ", this.crimes);
+      console.log("crimeList: ", this.crimeList)
+
       for (let row of rows) {
         var rowList = [];
         for (let i = 0; i < row; i++) {
@@ -535,7 +545,14 @@ Vue.createApp({
       }
       this.shelf = shelves;
       console.log("shelf: ", this.shelf);
+      return shelves;
     },
+
+    clearCart: function() {
+      this.cart.cart = [];
+      console.log("clear cart happened")
+    },
+
     payItem: function (crime) {
       if (this.cart.cart.length != 0) {
         this.totalTime += crime.jail_time;
@@ -550,7 +567,22 @@ Vue.createApp({
   },
   created: function () {
     // this.getCrimes()
+    this.theftShelf = this.buildShelf(this.theft);
+    this.assaultShelf = this.buildShelf(this.assault);
+    this.trafficShelf = this.buildShelf(this.traffic);
+    this.drugsShelf = this.buildShelf(this.drugs);
+    this.clearanceShelf = this.buildShelf(this.clearance);
+
   },
+  watch: {
+    squimp() {
+      if (this.page == 1) {
+        this.cart.cart = [];
+        console.log("squimp happened")
+      }
+    }
+
+    },
   computed: {
     // balance() {
     //   return this.receipt.theft.reduce((total, crime) => total + crime.jail_time, 0);
