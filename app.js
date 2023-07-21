@@ -12,6 +12,13 @@ Vue.createApp({
         drugs: [],
         clearance: [],
       },
+      receipt : {
+        theft: [],
+        assault: [],
+        traffic: [],
+        drugs: [],
+        clearance: []
+      },
       theft: [
         {
           crime_name: "Burglarizing a commercial location",
@@ -534,7 +541,9 @@ Vue.createApp({
         this.totalTime += crime.jail_time;
         this.totalFine += crime.max_penalty;
 
-        this.cart[String(crime.category)].push(crime);
+        this.receipt[String(crime.category)].push(crime);
+        console.log("totalTime: ", this.totalTime);
+        console.log("totalFine: ", this.totalFine);
         this.cart.cart.pop();
       }
     },
@@ -543,7 +552,12 @@ Vue.createApp({
     // this.getCrimes()
   },
   computed: {
-    balance() {},
+    // balance() {
+    //   return this.receipt.theft.reduce((total, crime) => total + crime.jail_time, 0);
+    // },
+    // bilince() {
+    //   return this.receipt.theft.reduce((tatal, crime) => tatal + crime.jail_time, 0);
+    // }
   },
 }).mount("#app");
 

@@ -172,10 +172,12 @@
             </div>
             <div class="row-footer">
               <div>TOTAL</div>
-              <div v-bind:class="[{green: balance > 0 }, {red: balance <= 0 }]">
-                {{balance}}
+              <div>
+                {{totalFine}}
               </div>
-              <div></div>
+              <div>
+                {{totalTime}}
+              </div>
               <div></div>
             </div>
           </div>
@@ -305,21 +307,28 @@
           </div>
           <div class="cart">
 
-            <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
-                        <div>{{crime.crime_name}}</div>
-                        <div >{{exp.amount}}</div>
-                        <div>{{exp.category}}</div>
-                    </div> -->
-            <div v-for="(crime, index) in cart" class="row-body">
-              <div>{{crime.crime_name}}</div>
+            <div class="row-head">
+              <div>ITEM</div>
+              <div>FINE</div>
+              <div>TIME</div>
+            </div>
+
+
+            <div v-for="item in receipt">
+              <div v-for="crime in item" class="row-body"> 
+                <div> {{crime.crime_name}}</div>
+                <div>{{crime.max_penalty}}</div>
+                <div>{{crime.jail_time}}</div>
+              </div>
             </div>
             <div class="row-footer">
               <div>TOTAL</div>
-              <div v-bind:class="[{green: balance > 0 }, {red: balance <= 0 }]">
-                {{balance}}
+              <div>
+                ${{totalFine}}
               </div>
-              <div></div>
-              <div></div>
+              <div>
+                {{totalTime}} years
+              </div>
             </div>
           </div>
 
