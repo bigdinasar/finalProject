@@ -24,22 +24,10 @@
           </div>
           <div class="cart">
 
-            <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
-                        <div>{{crime.crime_name}}</div>
-                        <div >{{exp.amount}}</div>
-                        <div>{{exp.category}}</div>
-                    </div> -->
-            <div v-for="(crime, index) in cart" class="row-body">
-              <div>{{crime.crime_name}}</div>
-            </div>
-            <div class="row-footer">
-              <div>TOTAL</div>
-              <div v-bind:class="[{green: balance > 0 }, {red: balance <= 0 }]">
-                {{balance}}
-              </div>
-              <div></div>
-              <div></div>
-            </div>
+            <img src="meet-and-greet.png" alt="poster">
+            <img src="organ-sale.png" alt="organ">
+            <img src="Yellow Law Firm Facebook Cover.png" alt="lawfirm">
+            <img src="burglary-workshop.png" alt="">
           </div>
 
           <div class="setting">
@@ -66,22 +54,9 @@
             <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
-
-            <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
-                        <div>{{crime.crime_name}}</div>
-                        <div >{{exp.amount}}</div>
-                        <div>{{exp.category}}</div>
-                    </div> -->
-            <div v-for="(crime, index) in cart" class="row-body">
-              <div>{{crime.crime_name}}</div>
-            </div>
-            <div class="row-footer">
-              <div>TOTAL</div>
-              <div v-bind:class="[{green: balance > 0 }, {red: balance <= 0 }]">
-                {{balance}}
-              </div>
-              <div></div>
-              <div></div>
+            
+            <div v-for="item in cart.cart" class="row-body">
+                <div>{{item.crime_name}}</div>
             </div>
           </div>
 
@@ -163,6 +138,7 @@
           </div>
           <div class="setting1">
             <div class="shelves">
+              <button @click="goToPage(2)">Back</button>
               <div v-for="sherf in assaultShelf" class="shelf">
                 <div v-for="item in sherf">
                   <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
@@ -178,29 +154,17 @@
             <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
-
-            <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
-                        <div>{{crime.crime_name}}</div>
-                        <div >{{exp.amount}}</div>
-                        <div>{{exp.category}}</div>
-                    </div> -->
-            <div v-for="(crime, index) in cart" class="row-body">
-              <div>{{crime.crime_name}}</div>
-            </div>
-            <div class="row-footer">
-              <div>TOTAL</div>
-              <div v-bind:class="[{green: balance > 0 }, {red: balance <= 0 }]">
-                {{balance}}
-              </div>
-              <div></div>
-              <div></div>
+            
+            <div v-for="item in cart.cart" class="row-body">
+                <div>{{item.crime_name}}</div>
             </div>
           </div>
           <div class="setting1">
             <div class="shelves">
+              <button @click="goToPage(2)">Back</button>
               <div v-for="sherf in trafficShelf" class="shelf">
                 <div v-for="item in sherf">
-                  <img v-bind:src="item.image" alt="crimeScene" @click="goToPage(2)">
+                  <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
                 </div>
               </div>
             </div>
@@ -213,26 +177,14 @@
             <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
-
-            <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
-                        <div>{{crime.crime_name}}</div>
-                        <div >{{exp.amount}}</div>
-                        <div>{{exp.category}}</div>
-                    </div> -->
-            <div v-for="(crime, index) in cart" class="row-body">
-              <div>{{crime.crime_name}}</div>
-            </div>
-            <div class="row-footer">
-              <div>TOTAL</div>
-              <div v-bind:class="[{green: balance > 0 }, {red: balance <= 0 }]">
-                {{balance}}
-              </div>
-              <div></div>
-              <div></div>
+            
+            <div v-for="item in cart.cart" class="row-body">
+                <div>{{item.crime_name}}</div>
             </div>
           </div>
           <div class="setting1">
             <div class="shelves">
+              <button @click="goToPage(2)">Back</button>
               <div v-for="sherf in drugsShelf" class="shelf">
                 <div v-for="item in sherf">
                   <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
@@ -248,29 +200,15 @@
             <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
-
-
-            <!-- <div v-for="crime in filteredExpenses" class="row-body" v-if="search.length > 0 && filteredExpenses.length > 0">
-                        <div>{{crime.crime_name}}</div>
-                        <div >{{exp.amount}}</div>
-                        <div>{{exp.category}}</div>
-                    </div> -->
-            <div v-for="(crime, index) in cart" class="row-body">
-              <div>{{crime.crime_name}}</div>
-              <!-- <button @click="deleteCrime(index)">X</button> -->
-            </div>
-            <div class="row-footer">
-              <div>TOTAL</div>
-              <div v-bind:class="[{green: balance > 0 }, {red: balance <= 0 }]">
-                {{balance}}
-              </div>
-              <div></div>
-              <div></div>
+            
+            <div v-for="item in cart.cart" class="row-body">
+                <div>{{item.crime_name}}</div>
             </div>
           </div>
 
           <div class="setting1">
             <div class="shelves">
+              <button @click="goToPage(2)">Back</button>
               <div v-for="sherf in clearanceShelf" class="shelf">
                 <div v-for="item in sherf">
                   <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
