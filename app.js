@@ -2,7 +2,7 @@ Vue.createApp({
   data() {
     return {
       rating : "",
-      ratings: ["I've seen better", "not bad", "Wow! So good", "Wow, unmatched", ],
+      ratings: ["I've seen better", "not bad", "Wow! So good", "Wow, unmatched"],
       page: 1,
       // crimes: [],
       shelf: [],
@@ -33,6 +33,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/angry-rock.png",
+          clearance_rate: .49,
         },
         {
           crime_name: "Burglarizing a dwelling",
@@ -40,6 +41,7 @@ Vue.createApp({
           max_penalty: 15000,
           jail_time: 15,
           image: "fpImages/banana.jpg",
+          clearance_rate: .32,
         },
         {
           crime_name: "Stealing an organ",
@@ -47,6 +49,7 @@ Vue.createApp({
           max_penalty: 50000,
           jail_time: 5,
           image: "fpImages/bear.png",
+          clearance_rate: .32,
         },
         {
           crime_name: "Stealing jewelry",
@@ -54,6 +57,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/bigBird.png",
+          clearance_rate: .17,
         },
         {
           crime_name: "Stealing a television",
@@ -61,6 +65,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/black-dog.png",
+          clearance_rate: .17,
         },
         {
           crime_name: "Stealing a bicycle",
@@ -68,6 +73,7 @@ Vue.createApp({
           max_penalty: 2500,
           jail_time: 1,
           image: "fpImages/bottle.png",
+          clearance_rate: .17,
         },
         {
           crime_name: "Stealing a couch",
@@ -75,6 +81,7 @@ Vue.createApp({
           max_penalty: 2500,
           jail_time: 1,
           image: "fpImages/buddy-dogs.png",
+          clearance_rate: .32,
         },
         {
           crime_name: "Stealing a generator",
@@ -82,6 +89,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/coke.png",
+          clearance_rate: .32,
         },
         {
           crime_name: "Stealing a bed",
@@ -89,6 +97,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/color-tab.png",
+          clearance_rate: .32,
         },
         {
           crime_name: "Stealing a car",
@@ -96,6 +105,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/confused-dog.png",
+          clearance_rate: .05,
         },
         {
           crime_name: "Stealing a train",
@@ -103,6 +113,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/cool-rock.webp",
+          clearance_rate: .05,
         },
       ],
       assault: [
@@ -112,6 +123,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 25,
           image: "fpImages/crystal.png",
+          clearance_rate: .6,
         },
         {
           crime_name: "Causing bodily injury to an innocent bystander",
@@ -119,6 +131,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/floppy.webp",
+          clearance_rate: NA,
         },
         {
           crime_name: "Causing serious bodily injury to an innocent bystander",
@@ -126,6 +139,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/flowers.png",
+          clearance_rate: NA,
         },
         {
           crime_name: "Causing an innocent bystander to lose consciousness",
@@ -133,6 +147,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/fluffy-dog.png",
+          clearance_rate: NA,
         },
         {
           crime_name: "Causing bodily injury to law enforcement",
@@ -140,6 +155,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 25,
           image: "fpImages/full-trash.jpg",
+          clearance_rate: 1,
         },
         {
           crime_name:
@@ -148,6 +164,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/trask-can.jpg",
+          clearance_rate: .24,
         },
         {
           crime_name:
@@ -156,6 +173,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/turtle-holding-pencil.png",
+          clearance_rate: .24,
         },
         {
           crime_name: "Committing arson in a way that endangers human life",
@@ -163,6 +181,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/ghost.png",
+          clearance_rate: .24,
         },
         {
           crime_name: "Stalking",
@@ -170,6 +189,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/girl-pencil.png",
+          clearance_rate: .5,
         },
       ],
       traffic: [
@@ -179,6 +199,7 @@ Vue.createApp({
           max_penalty: 45,
           jail_time: 0,
           image: "fpImages/glasses-rock.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "Driving with an expired drivers license",
@@ -186,6 +207,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/viscious.jpg",
+          clearance_rate: 1,
         },
         {
           crime_name: "Driving with no drivers license",
@@ -193,6 +215,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/green-eye-cat.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "Avoiding getting pulled over by an officer",
@@ -200,6 +223,7 @@ Vue.createApp({
           max_penalty: 2500,
           jail_time: 1,
           image: "fpImages/grey-cat.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "Leaving the scene of an accident",
@@ -207,6 +231,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/grouchy-cat.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "DUI",
@@ -214,6 +239,7 @@ Vue.createApp({
           max_penalty: 1310,
           jail_time: 0.5,
           image: "fpImages/grumpy-rock.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "Reckless driving",
@@ -221,6 +247,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/weed.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "Unsafe lane travel",
@@ -228,6 +255,7 @@ Vue.createApp({
           max_penalty: 200,
           jail_time: 0,
           image: "fpImages/heart-dog.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "Not having two working headlights",
@@ -235,6 +263,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0,
           image: "fpImages/jewels.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "DUI refusal",
@@ -242,6 +271,7 @@ Vue.createApp({
           max_penalty: 500,
           jail_time: 1,
           image: "fpImages/jumpy-pencil.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "Driving with expired registration",
@@ -249,6 +279,7 @@ Vue.createApp({
           max_penalty: 750,
           jail_time: 0,
           image: "fpImages/kid-marker.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "Going 0-10 MPH over the speed limit in a school zone",
@@ -256,6 +287,7 @@ Vue.createApp({
           max_penalty: 140,
           jail_time: 0,
           image: "fpImages/white-dog.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "Going 11-19 MPH over the speed limit in a school zone",
@@ -263,6 +295,7 @@ Vue.createApp({
           max_penalty: 240,
           jail_time: 0,
           image: "fpImages/winky-dog.webp",
+          clearance_rate: 1,
         },
         {
           crime_name: "Going 20+ MPH over the speed limit in a school zone",
@@ -270,6 +303,7 @@ Vue.createApp({
           max_penalty: 440,
           jail_time: 0,
           image: "fpImages/marshmallow.png",
+          clearance_rate: 1,
         },
         {
           crime_name:
@@ -278,6 +312,7 @@ Vue.createApp({
           max_penalty: 170,
           jail_time: 0,
           image: "fpImages/max.png",
+          clearance_rate: 1,
         },
         {
           crime_name:
@@ -286,6 +321,7 @@ Vue.createApp({
           max_penalty: 220,
           jail_time: 0,
           image: "fpImages/menacing-rock.png",
+          clearance_rate: 1,
         },
         {
           crime_name:
@@ -294,6 +330,7 @@ Vue.createApp({
           max_penalty: 320,
           jail_time: 0,
           image: "fpImages/milk.png",
+          clearance_rate: 1,
         },
         {
           crime_name:
@@ -302,6 +339,7 @@ Vue.createApp({
           max_penalty: 470,
           jail_time: 0,
           image: "fpImages/notebook.png",
+          clearance_rate: 1,
         },
         {
           crime_name:
@@ -310,6 +348,7 @@ Vue.createApp({
           max_penalty: 670,
           jail_time: 0,
           image: "fpImages/orange-cat.png",
+          clearance_rate: 1,
         },
         {
           crime_name:
@@ -318,6 +357,7 @@ Vue.createApp({
           max_penalty: 870,
           jail_time: 0,
           image: "fpImages/orange-stripe-cat.png",
+          clearance_rate: 1,
         },
       ],
       drugs: [
@@ -327,6 +367,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/peeping-dog.png",
+          clearance_rate: .44,
         },
         {
           crime_name: "Sale of drug paraphernalia",
@@ -334,6 +375,7 @@ Vue.createApp({
           max_penalty: 2500,
           jail_time: 1,
           image: "fpImages/pencil-2.png",
+          clearance_rate: .44,
         },
         {
           crime_name: "Sale of drug paraphernalia to a minor",
@@ -341,6 +383,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/pot.png",
+          clearance_rate: .44,
         },
         {
           crime_name: "Selling marijuana",
@@ -348,6 +391,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/pencil.png",
+          clearance_rate: .44,
         },
         {
           crime_name: "Possession of marijuana",
@@ -355,6 +399,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/present-cat.png",
+          clearance_rate: .44,
         },
         {
           crime_name: "Cultivating marijuana",
@@ -362,6 +407,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/purple-cat-2.png",
+          clearance_rate: .44,
         },
         {
           crime_name: "Possession of cocaine",
@@ -369,6 +415,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/raymond.png",
+          clearance_rate: .44,
         },
         {
           crime_name: "Selling cocaine",
@@ -376,6 +423,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/purple-cat.png",
+          clearance_rate: .44,
         },
         {
           crime_name: "Possession of heroin",
@@ -383,6 +431,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/red-cheek-child.png",
+          clearance_rate: .44,
         },
         {
           crime_name: "Selling heroin",
@@ -390,6 +439,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/red-pencil.webp",
+          clearance_rate: .44,
         },
         {
           crime_name: "Possession of meth",
@@ -397,6 +447,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/reflection-dog.webp",
+          clearance_rate: .44,
         },
         {
           crime_name: "Selling meth",
@@ -404,6 +455,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/rico.png",
+          clearance_rate: .44,
         },
         {
           crime_name: "Possession of MDMA",
@@ -411,6 +463,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/rock.png",
+          clearance_rate: .44,
         },
         {
           crime_name: "Selling MDMA",
@@ -418,6 +471,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/rocky-rock.png",
+          clearance_rate: .44,
         },
       ],
       clearance: [
@@ -427,6 +481,7 @@ Vue.createApp({
           max_penalty: 50,
           jail_time: 0,
           image: "fpImages/rottweiler.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "Throwing snowballs",
@@ -434,6 +489,7 @@ Vue.createApp({
           max_penalty: 50,
           jail_time: 0,
           image: "fpImages/salt.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "throwing bricks onto the road",
@@ -441,6 +497,7 @@ Vue.createApp({
           max_penalty: 850,
           jail_time: 0.08,
           image: "fpImages/samone.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "Driving blindfolded",
@@ -448,6 +505,7 @@ Vue.createApp({
           max_penalty: 3000,
           jail_time: 1,
           image: "fpImages/scary-pencil.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "Arson damages exceeding $5000",
@@ -455,6 +513,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/scary-rock.png",
+          clearance_rate: .24,
         },
         {
           crime_name: "Arson damages ranging from  $500 to $1500",
@@ -462,6 +521,7 @@ Vue.createApp({
           max_penalty: 2500,
           jail_time: 1,
           image: "fpImages/scissors-pencil.png",
+          clearance_rate: .24,
         },
         {
           crime_name: "Arson damages ranging from $1500 to $5000",
@@ -469,6 +529,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/shiny-dogs.png",
+          clearance_rate: .24,
         },
         {
           crime_name: "Arson damages under $500",
@@ -476,6 +537,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/skull.png",
+          clearance_rate: .24,
         },
         {
           crime_name: "Driving a car with tinted windows",
@@ -483,6 +545,7 @@ Vue.createApp({
           max_penalty: 50,
           jail_time: 0,
           image: "fpImages/squall.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "Driving a car without tail lights",
@@ -490,6 +553,7 @@ Vue.createApp({
           max_penalty: 40,
           jail_time: 0,
           image: "fpImages/staring-rock.png",
+          clearance_rate: 1,
         },
         {
           crime_name: "Driving an unsafe vehicle",
@@ -497,6 +561,7 @@ Vue.createApp({
           max_penalty: 240,
           jail_time: 0,
           image: "fpImages/stool-dog.webp",
+          clearance_rate: 1,
         },
         {
           crime_name: "Forging a prescription",
@@ -504,6 +569,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/tab.png",
+          clearance_rate: .05,
         },
       ],
       totalTime: 0,
