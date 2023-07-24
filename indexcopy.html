@@ -20,9 +20,9 @@
       <div class="page" v-if="page == 1">
         <div class="wrapper">
           <div class="home">
-            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
+            <img src="20230724_120249.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
-          <div class="cart">
+          <div class="adds">
 
             <img src="meet-and-greet.png" alt="poster">
             <img src="organ-sale.png" alt="organ">
@@ -51,7 +51,7 @@
       <div class="page" v-if="page == 2">
         <div class="wrapper">
           <div class="home">
-            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
+            <img src="20230724_120249.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
             
@@ -104,7 +104,7 @@
       <div class="page" v-if="page == 3">
         <div class="wrapper">
           <div class="home">
-            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
+            <img src="20230724_120249.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
             
@@ -115,7 +115,7 @@
 
           <div class="setting1">
             <div class="shelves">
-              <button @click="goToPage(2)">Back</button>
+              <button class="back" @click="goToPage(2)">Back</button>
               <div v-for="sherf in theftShelf" class="shelf">
                 <div v-for="item in sherf">
                   <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
@@ -128,7 +128,7 @@
       <div class="page" v-if="page == 4">
         <div class="wrapper">
           <div class="home">
-            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1)">
+            <img src="20230724_120249.png" alt="logo" @click="goToPage(1)">
           </div>
           <div class="cart">
             
@@ -138,7 +138,7 @@
           </div>
           <div class="setting1">
             <div class="shelves">
-              <button @click="goToPage(2)">Back</button>
+              <button class="back" @click="goToPage(2)">Back</button>
               <div v-for="sherf in assaultShelf" class="shelf">
                 <div v-for="item in sherf">
                   <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
@@ -151,7 +151,7 @@
       <div class="page" v-if="page == 5">
         <div class="wrapper">
           <div class="home">
-            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
+            <img src="20230724_120249.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
             
@@ -161,7 +161,7 @@
           </div>
           <div class="setting1">
             <div class="shelves">
-              <button @click="goToPage(2)">Back</button>
+              <button class="back" @click="goToPage(2)">Back</button>
               <div v-for="sherf in trafficShelf" class="shelf">
                 <div v-for="item in sherf">
                   <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
@@ -174,7 +174,7 @@
       <div class="page" v-if="page == 6">
         <div class="wrapper">
           <div class="home">
-            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
+            <img src="20230724_120249.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
             
@@ -184,7 +184,7 @@
           </div>
           <div class="setting1">
             <div class="shelves">
-              <button @click="goToPage(2)">Back</button>
+              <button class="back" @click="goToPage(2)">Back</button>
               <div v-for="sherf in drugsShelf" class="shelf">
                 <div v-for="item in sherf">
                   <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
@@ -197,7 +197,7 @@
       <div class="page" v-if="page == 7">
         <div class="wrapper">
           <div class="home">
-            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
+            <img src="20230724_120249.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
           <div class="cart">
             
@@ -208,7 +208,7 @@
 
           <div class="setting1">
             <div class="shelves">
-              <button @click="goToPage(2)">Back</button>
+              <button class="back" @click="goToPage(2)">Back</button>
               <div v-for="sherf in clearanceShelf" class="shelf">
                 <div v-for="item in sherf">
                   <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
@@ -221,9 +221,9 @@
       <div class="page" v-if="page == 8">
         <div class="wrapper">
           <div class="home">
-            <img src="Screenshot 2023-07-17 104156.png" alt="logo" @click="goToPage(1); clearCart()">
+            <img src="20230724_120249.png" alt="logo" @click="goToPage(1); clearCart()">
           </div>
-          <div class="cart">
+          <div class="receiptt">
 
             <div class="row-head">
               <div>ITEM</div>
@@ -259,12 +259,16 @@
               alt="crimeScene"
               usemap="#workmap"
             />
-            <div id="checkoutDisplay">
-          <img v-bind:src="cart.cart[(cart.cart.length-1)].image" alt="crimeScene" @click="payItem(cart.cart[cart.cart.length-1])">
+            <div >
+          <img id="checkoutDisplay" v-bind:src="cart.cart[(cart.cart.length-1)].image" alt="crimeScene" @click="payItem(cart.cart[cart.cart.length-1])" v-if="cart.cart.length > 0">
+          <div id="goingToJail" v-else>
+            <div>
+              <div><p>${{totalFine}}</p></div>
+              <div><p>{{totalTime}} years!</p></div>
             </div>
-            <map name="workmap" @click="goToPage(2)">
-              <area shape="rect" coords="385,360,580,490" alt="Enter" />
-            </map>
+            <img  src="mugshots.jpeg" alt="mug"> </div>
+          
+            </div>
           </div>
         </div>
         </div>

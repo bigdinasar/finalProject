@@ -531,9 +531,6 @@ Vue.createApp({
       var rows = [perRow, perRow, perRow, total - perRow * 3];
       var shelves = [];
 
-      console.log("crimes: ", this.crimes);
-      console.log("crimeList: ", this.crimeList)
-
       for (let row of rows) {
         var rowList = [];
         for (let i = 0; i < row; i++) {
@@ -559,9 +556,9 @@ Vue.createApp({
         this.totalFine += crime.max_penalty;
 
         this.receipt[String(crime.category)].push(crime);
-        console.log("totalTime: ", this.totalTime);
-        console.log("totalFine: ", this.totalFine);
+        console.log("before cart length: ", this.cart.cart.length);
         this.cart.cart.pop();
+        console.log("after cart length: ", this.cart.cart.length);
       }
     },
   },
