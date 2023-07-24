@@ -172,9 +172,59 @@ map :hover {
     align-items: center;
 }
 
-#goingToJail img {
+#floatr {
+    position: absolute;
+    display:flex;
+    justify-content: right;
+    top: 10vh;
+    right: 10vw;
+    border: 0px;
+}
+
+#floatr img {
+    border: 0px;
     width: 50%;
     height: auto;
+}
+
+#floatrText {
+    position: absolute;
+    display:flex;
+    justify-content: right;
+    top: 10vh;
+    height: 20vh;
+    width: auto;
+    right: 1.5vw;
+    border: 0px;
+}
+
+#floatrText img{
+    position: absolute;
+    display:flex;
+    justify-content: right;
+    top: 14vh;
+    height: 32vh;
+    width: auto;
+    left: -20vw;
+    border: 0px;
+}
+
+#floatrText p {
+    position: absolute;
+    display:flex;
+    justify-content: right;
+    top: 20vh;
+    height: 5vh;
+    width: auto;
+    left: -15vw;
+    border: 0px;
+}
+
+#jailImage img {
+    width: 50%;
+    height: auto;
+
+
 }
 
 #goingToJail p {

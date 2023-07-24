@@ -1,6 +1,8 @@
 Vue.createApp({
   data() {
     return {
+      rating : "",
+      ratings: ["I've seen better", "not bad", "Wow! So good", "Wow, unmatched", ],
       page: 1,
       // crimes: [],
       shelf: [],
@@ -554,6 +556,13 @@ Vue.createApp({
       if (this.cart.cart.length != 0) {
         this.totalTime += crime.jail_time;
         this.totalFine += crime.max_penalty;
+
+        if (this.totalFine >= 10000) {
+          this.rating = this.ratings[3]
+        }
+        else {
+          this.rating = this.ratings[0]
+        }
 
         this.receipt[String(crime.category)].push(crime);
         console.log("before cart length: ", this.cart.cart.length);
