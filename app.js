@@ -219,7 +219,7 @@ Vue.createApp({
           category: "traffic",
           max_penalty: 2500,
           jail_time: 1,
-          image: "fpImages/grey-cat.png",
+          image: "fpImages/gray-cat.png",
           clearance_rate: 1,
         },
         {
