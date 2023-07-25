@@ -83,15 +83,11 @@ button {
     cursor: pointer;
 }
 
-.adds {
-    grid-column: 1/2;
-    grid-row:2/3;
+.ads {
     display: flex;
     flex-flow: column;
-    gap:5Spx;
     width: 22vw;
     height: 66.6vh;
-    padding-left: 1vw;
     border: 9px solid skyblue;
     border-radius: 10px;
     overflow-y: scroll;
