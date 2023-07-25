@@ -37,7 +37,7 @@
               usemap="#workmap"
             />
             <map name="workmap" @click="goToPage(2)">
-              <area shape="rect" coords="385,360,580,490" alt="Enter" />
+              <area shape="rect" coords="400,368,590,500" alt="Enter" />
             </map>
           </div>
         </div>
@@ -63,33 +63,38 @@
           <div class="setting">
             <img src="Crime-Aisle.png" alt="crimeAisle" usemap="#workmap" />
             <map name="workmap">
+              <!--theft aisle-->
               <area
                 shape="rect"
-                coords="15,200,160,720"
+                coords="22,170,140,592"
                 @click="goToPage(3)"
                 alt="Theft"
               />
+              <!--assault aisle-->
               <area
                 shape="rect"
-                coords="220,200,365,720"
+                coords="187,170,305,592"
                 @click="goToPage(4)"
                 alt="Assault"
               />
+              <!--traffic aisle-->
               <area
                 shape="rect"
-                coords="435,200,580,720"
+                coords="362,170,478,592"
                 @click="goToPage(5) "
                 alt="Traffic"
               />
+              <!--drugs aisle-->
               <area
                 shape="rect"
-                coords="640,200,782,720"
+                coords="525,170,641,592"
                 @click="goToPage(6)"
                 alt="Drugs"
               />
+              <!--clearance aisle-->
               <area
                 shape="rect"
-                coords="840,200,984,720"
+                coords="688,170,806,592"
                 @click="goToPage(7)"
                 alt="Clearance"
               />
