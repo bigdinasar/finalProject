@@ -611,8 +611,10 @@ Vue.createApp({
     },
 
     clearCart: function () {
-      this.cart = [];
-      console.log("clear cart happened");
+      // this.cart = [];
+      // console.log("clear cart happened");
+
+      window.location.reload();
     },
 
     payItem: function (crime) {
