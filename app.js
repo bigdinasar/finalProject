@@ -131,7 +131,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/floppy.webp",
-          clearance_rate: NA,
+          clearance_rate: .42,
         },
         {
           crime_name: "Causing serious bodily injury to an innocent bystander",
@@ -139,7 +139,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/flowers.png",
-          clearance_rate: NA,
+          clearance_rate: .42,
         },
         {
           crime_name: "Causing an innocent bystander to lose consciousness",
@@ -147,7 +147,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/fluffy-dog.png",
-          clearance_rate: NA,
+          clearance_rate: .42,
         },
         {
           crime_name: "Causing bodily injury to law enforcement",
