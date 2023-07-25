@@ -212,7 +212,7 @@ map :hover {
     position: absolute;
     display:flex;
     justify-content: right;
-    top: 20vh;
+    top: 2vh;
     height: 5vh;
     width: auto;
     left: -15vw;
