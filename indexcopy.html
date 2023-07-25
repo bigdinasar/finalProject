@@ -268,13 +268,13 @@
           <img id="checkoutDisplay" v-bind:src="cart[(cart.length-1)].image" alt="crimeScene" @click="payItem(cart[cart.length-1])" v-if="cart.length > 0">
           <div id="goingToJail" v-else>
             <div id="jailImage">
-              <img  src="crime-mugshot-2.jpeg" alt="mug">
+              <img  src="crime-mugshot-2.png" alt="mug">
               
               <div><p>${{totalFine}}</p></div>
               <div><p>{{totalTime}} years!</p></div>
             </div>
 
-            <button id="floatar" @click="window.location.reload()">Restart</button>
+            <button id="floatar" @click="clearCart()">Restart</button>
             <img id="floatr" src="1689610273140.png" alt="bird">
             <div id="floatrText"> <p>{{totalFine}}, {{rating}}</p> <img  src="58adf251e612507e27bd3c32.png" alt="text"></div>
           </div>
