@@ -1,25 +1,22 @@
 Vue.createApp({
   data() {
     return {
-      rating : "",
-      ratings: ["I've seen better", "not bad", "Wow! So good", "Wow, unmatched"],
+      rating: "",
+      ratings: [
+        "I've seen better",
+        "not bad",
+        "Wow! So good",
+        "Wow, unmatched",
+      ],
       page: 1,
-      // crimes: [],
       shelf: [],
-      cart: {
-        cart: [],
+      cart: [],
+      receipt: {
         theft: [],
         assault: [],
         traffic: [],
         drugs: [],
         clearance: [],
-      },
-      receipt : {
-        theft: [],
-        assault: [],
-        traffic: [],
-        drugs: [],
-        clearance: []
       },
       theftShelf: [],
       assaultShelf: [],
@@ -33,7 +30,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/angry-rock.png",
-          clearance_rate: .49,
+          clearance_rate: 0.49,
         },
         {
           crime_name: "Burglarizing a dwelling",
@@ -41,7 +38,7 @@ Vue.createApp({
           max_penalty: 15000,
           jail_time: 15,
           image: "fpImages/banana.jpg",
-          clearance_rate: .32,
+          clearance_rate: 0.32,
         },
         {
           crime_name: "Stealing an organ",
@@ -49,7 +46,7 @@ Vue.createApp({
           max_penalty: 50000,
           jail_time: 5,
           image: "fpImages/bear.png",
-          clearance_rate: .32,
+          clearance_rate: 0.32,
         },
         {
           crime_name: "Stealing jewelry",
@@ -57,7 +54,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/bigBird.png",
-          clearance_rate: .17,
+          clearance_rate: 0.17,
         },
         {
           crime_name: "Stealing a television",
@@ -65,7 +62,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/black-dog.png",
-          clearance_rate: .17,
+          clearance_rate: 0.17,
         },
         {
           crime_name: "Stealing a bicycle",
@@ -73,7 +70,7 @@ Vue.createApp({
           max_penalty: 2500,
           jail_time: 1,
           image: "fpImages/bottle.png",
-          clearance_rate: .17,
+          clearance_rate: 0.17,
         },
         {
           crime_name: "Stealing a couch",
@@ -81,7 +78,7 @@ Vue.createApp({
           max_penalty: 2500,
           jail_time: 1,
           image: "fpImages/buddy-dogs.png",
-          clearance_rate: .32,
+          clearance_rate: 0.32,
         },
         {
           crime_name: "Stealing a generator",
@@ -89,7 +86,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/coke.png",
-          clearance_rate: .32,
+          clearance_rate: 0.32,
         },
         {
           crime_name: "Stealing a bed",
@@ -97,7 +94,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/color-tab.png",
-          clearance_rate: .32,
+          clearance_rate: 0.32,
         },
         {
           crime_name: "Stealing a car",
@@ -105,7 +102,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/confused-dog.png",
-          clearance_rate: .05,
+          clearance_rate: 0.05,
         },
         {
           crime_name: "Stealing a train",
@@ -113,7 +110,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/cool-rock.webp",
-          clearance_rate: .05,
+          clearance_rate: 0.05,
         },
       ],
       assault: [
@@ -123,7 +120,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 25,
           image: "fpImages/crystal.png",
-          clearance_rate: .6,
+          clearance_rate: 0.6,
         },
         {
           crime_name: "Causing bodily injury to an innocent bystander",
@@ -131,7 +128,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/floppy.webp",
-          clearance_rate: .42,
+          clearance_rate: 0.42,
         },
         {
           crime_name: "Causing serious bodily injury to an innocent bystander",
@@ -139,7 +136,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/flowers.png",
-          clearance_rate: .42,
+          clearance_rate: 0.42,
         },
         {
           crime_name: "Causing an innocent bystander to lose consciousness",
@@ -147,7 +144,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/fluffy-dog.png",
-          clearance_rate: .42,
+          clearance_rate: 0.42,
         },
         {
           crime_name: "Causing bodily injury to law enforcement",
@@ -164,7 +161,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/trask-can.jpg",
-          clearance_rate: .24,
+          clearance_rate: 0.24,
         },
         {
           crime_name:
@@ -173,7 +170,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/turtle-holding-pencil.png",
-          clearance_rate: .24,
+          clearance_rate: 0.24,
         },
         {
           crime_name: "Committing arson in a way that endangers human life",
@@ -181,7 +178,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/ghost.png",
-          clearance_rate: .24,
+          clearance_rate: 0.24,
         },
         {
           crime_name: "Stalking",
@@ -189,7 +186,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/girl-pencil.png",
-          clearance_rate: .5,
+          clearance_rate: 0.5,
         },
       ],
       traffic: [
@@ -367,7 +364,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/peeping-dog.png",
-          clearance_rate: .44,
+          clearance_rate: 0.44,
         },
         {
           crime_name: "Sale of drug paraphernalia",
@@ -375,7 +372,7 @@ Vue.createApp({
           max_penalty: 2500,
           jail_time: 1,
           image: "fpImages/pencil-2.png",
-          clearance_rate: .44,
+          clearance_rate: 0.44,
         },
         {
           crime_name: "Sale of drug paraphernalia to a minor",
@@ -383,7 +380,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/pot.png",
-          clearance_rate: .44,
+          clearance_rate: 0.44,
         },
         {
           crime_name: "Selling marijuana",
@@ -391,7 +388,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/pencil.png",
-          clearance_rate: .44,
+          clearance_rate: 0.44,
         },
         {
           crime_name: "Possession of marijuana",
@@ -399,7 +396,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/present-cat.png",
-          clearance_rate: .44,
+          clearance_rate: 0.44,
         },
         {
           crime_name: "Cultivating marijuana",
@@ -407,7 +404,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/purple-cat-2.png",
-          clearance_rate: .44,
+          clearance_rate: 0.44,
         },
         {
           crime_name: "Possession of cocaine",
@@ -415,7 +412,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/raymond.png",
-          clearance_rate: .44,
+          clearance_rate: 0.44,
         },
         {
           crime_name: "Selling cocaine",
@@ -423,7 +420,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/purple-cat.png",
-          clearance_rate: .44,
+          clearance_rate: 0.44,
         },
         {
           crime_name: "Possession of heroin",
@@ -431,7 +428,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/red-cheek-child.png",
-          clearance_rate: .44,
+          clearance_rate: 0.44,
         },
         {
           crime_name: "Selling heroin",
@@ -439,7 +436,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/red-pencil.webp",
-          clearance_rate: .44,
+          clearance_rate: 0.44,
         },
         {
           crime_name: "Possession of meth",
@@ -447,7 +444,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/reflection-dog.webp",
-          clearance_rate: .44,
+          clearance_rate: 0.44,
         },
         {
           crime_name: "Selling meth",
@@ -455,7 +452,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/rico.png",
-          clearance_rate: .44,
+          clearance_rate: 0.44,
         },
         {
           crime_name: "Possession of MDMA",
@@ -463,7 +460,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/rock.png",
-          clearance_rate: .44,
+          clearance_rate: 0.44,
         },
         {
           crime_name: "Selling MDMA",
@@ -471,7 +468,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/rocky-rock.png",
-          clearance_rate: .44,
+          clearance_rate: 0.44,
         },
       ],
       clearance: [
@@ -513,7 +510,7 @@ Vue.createApp({
           max_penalty: 10000,
           jail_time: 15,
           image: "fpImages/scary-rock.png",
-          clearance_rate: .24,
+          clearance_rate: 0.24,
         },
         {
           crime_name: "Arson damages ranging from  $500 to $1500",
@@ -521,7 +518,7 @@ Vue.createApp({
           max_penalty: 2500,
           jail_time: 1,
           image: "fpImages/scissors-pencil.png",
-          clearance_rate: .24,
+          clearance_rate: 0.24,
         },
         {
           crime_name: "Arson damages ranging from $1500 to $5000",
@@ -529,7 +526,7 @@ Vue.createApp({
           max_penalty: 5000,
           jail_time: 5,
           image: "fpImages/shiny-dogs.png",
-          clearance_rate: .24,
+          clearance_rate: 0.24,
         },
         {
           crime_name: "Arson damages under $500",
@@ -537,7 +534,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/skull.png",
-          clearance_rate: .24,
+          clearance_rate: 0.24,
         },
         {
           crime_name: "Driving a car with tinted windows",
@@ -569,7 +566,7 @@ Vue.createApp({
           max_penalty: 1000,
           jail_time: 0.5,
           image: "fpImages/tab.png",
-          clearance_rate: .05,
+          clearance_rate: 0.05,
         },
       ],
       totalTime: 0,
@@ -583,11 +580,11 @@ Vue.createApp({
     addCrime: function (crime) {
       //add crime to cart (in specific category)
 
-      this.cart.cart.push(crime);
+      this.cart.push(crime);
 
-      console.log("cart crime name: ", crime.crime_name)
+      console.log("cart crime name: ", crime.crime_name);
 
-      if (this.cart.cart.length == 10) {
+      if (this.cart.length == 10) {
         this.page = 8;
       }
     },
@@ -613,27 +610,26 @@ Vue.createApp({
       return shelves;
     },
 
-    clearCart: function() {
-      this.cart.cart = [];
-      console.log("clear cart happened")
+    clearCart: function () {
+      this.cart = [];
+      console.log("clear cart happened");
     },
 
     payItem: function (crime) {
-      if (this.cart.cart.length != 0) {
+      if (this.cart.length != 0) {
         this.totalTime += crime.jail_time;
         this.totalFine += crime.max_penalty;
 
         if (this.totalFine >= 10000) {
-          this.rating = this.ratings[3]
-        }
-        else {
-          this.rating = this.ratings[0]
+          this.rating = this.ratings[3];
+        } else {
+          this.rating = this.ratings[0];
         }
 
         this.receipt[String(crime.category)].push(crime);
-        console.log("before cart length: ", this.cart.cart.length);
-        this.cart.cart.pop();
-        console.log("after cart length: ", this.cart.cart.length);
+        console.log("before cart length: ", this.cart.length);
+        this.cart.pop();
+        console.log("after cart length: ", this.cart.length);
       }
     },
   },
@@ -644,17 +640,15 @@ Vue.createApp({
     this.trafficShelf = this.buildShelf(this.traffic);
     this.drugsShelf = this.buildShelf(this.drugs);
     this.clearanceShelf = this.buildShelf(this.clearance);
-
   },
   watch: {
     squimp() {
       if (this.page == 1) {
-        this.cart.cart = [];
-        console.log("squimp happened")
+        this.cart = [];
+        console.log("squimp happened");
       }
-    }
-
     },
+  },
   computed: {
     // balance() {
     //   return this.receipt.theft.reduce((total, crime) => total + crime.jail_time, 0);

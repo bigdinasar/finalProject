@@ -55,7 +55,7 @@
           </div>
           <div class="cart">
             
-            <div v-for="item in cart.cart" class="row-body">
+            <div v-for="item in cart" class="row-body">
                 <div>{{item.crime_name}}</div>
             </div>
           </div>
@@ -108,7 +108,7 @@
           </div>
           <div class="cart">
             
-            <div v-for="item in cart.cart" class="row-body">
+            <div v-for="item in cart" class="row-body">
                 <div>{{item.crime_name}}</div>
             </div>
           </div>
@@ -132,7 +132,7 @@
           </div>
           <div class="cart">
             
-            <div v-for="item in cart.cart" class="row-body">
+            <div v-for="item in cart" class="row-body">
                 <div>{{item.crime_name}}</div>
             </div>
           </div>
@@ -155,7 +155,7 @@
           </div>
           <div class="cart">
             
-            <div v-for="item in cart.cart" class="row-body">
+            <div v-for="item in cart" class="row-body">
                 <div>{{item.crime_name}}</div>
             </div>
           </div>
@@ -178,7 +178,7 @@
           </div>
           <div class="cart">
             
-            <div v-for="item in cart.cart" class="row-body">
+            <div v-for="item in cart" class="row-body">
                 <div>{{item.crime_name}}</div>
             </div>
           </div>
@@ -201,7 +201,7 @@
           </div>
           <div class="cart">
             
-            <div v-for="item in cart.cart" class="row-body">
+            <div v-for="item in cart" class="row-body">
                 <div>{{item.crime_name}}</div>
             </div>
           </div>
@@ -260,7 +260,7 @@
               usemap="#workmap"
             />
             <div >
-          <img id="checkoutDisplay" v-bind:src="cart.cart[(cart.cart.length-1)].image" alt="crimeScene" @click="payItem(cart.cart[cart.cart.length-1])" v-if="cart.cart.length > 0">
+          <img id="checkoutDisplay" v-bind:src="cart[(cart.length-1)].image" alt="crimeScene" @click="payItem(cart[cart.length-1])" v-if="cart.length > 0">
           <div id="goingToJail" v-else>
             <div id="jailImage">
               <img  src="mugshots.jpeg" alt="mug">
