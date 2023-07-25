@@ -10,9 +10,6 @@ nav {
 }
 
 
-html {
-    background-color: rgb(50, 78, 88);
-}
 
 
 .wrapper {
@@ -56,6 +53,10 @@ html {
     margin: 5px 10px;
     border-radius: 12px;
     box-shadow: 1px 5px 5px rgb(30, 29, 29);
+}
+
+.shelf img:hover {
+    cursor: pointer;
 }
 
 
@@ -152,6 +153,10 @@ map :hover {
     width: 12vh;
     height: 12vh;
     border: 0px;
+}
+
+#checkoutDisplay img:hover {
+    cursor: pointer;
 }
 
 #goingToJail {
@@ -308,15 +313,3 @@ map :hover {
     height: fit-content;
 }
 
-#floatar {
-    position: absolute;
-    display:flex;
-    top: 10vh;
-    left: 10vw;
-    padding: 20px;
-}
-
-#floatar button {
-    align-items: center;
-    justify-content: center;
-}
