@@ -9,10 +9,6 @@ nav {
     height: 10vh;
 }
 
-button {
-    height: 5vh;
-    width: 5vh;
-}
 
 html {
     background-color: rgb(50, 78, 88);
@@ -310,4 +306,17 @@ map :hover {
 .row-body {
     gap: 12px;
     height: fit-content;
+}
+
+#floatar {
+    position: absolute;
+    display:flex;
+    top: 10vh;
+    left: 10vw;
+    padding: 20px;
+}
+
+#floatar button {
+    align-items: center;
+    justify-content: center;
 }
