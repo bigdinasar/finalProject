@@ -313,3 +313,15 @@ map :hover {
     height: fit-content;
 }
 
+#floatar {
+    position: absolute;
+    display:flex;
+    top: 10vh;
+    left: 10vw;
+    padding: 20px;
+}
+
+#floatar button {
+    align-items: center;
+    justify-content: center;
+}
