@@ -81,6 +81,16 @@ nav {
     left: 25vw;
     z-index: 10;
     cursor: pointer;
+    background-color: rgb(0, 98, 255);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.back:hover {
+    transform: scale(1.1);
 }
 
 .ads {
@@ -319,9 +329,12 @@ map :hover {
     top: 10vh;
     left: 10vw;
     padding: 20px;
+    background-color: rgb(0, 98, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
-#floatar button {
-    align-items: center;
-    justify-content: center;
+#floatar:hover {
+    transform: scale(1.1);
 }
