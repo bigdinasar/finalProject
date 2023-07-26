@@ -260,9 +260,9 @@ map :hover {
 
 .setting img {
     width: auto;
-    height: 99.8vh;
-    border: 1.5vh solid skyblue;
-    border-radius: 1vh;
+    height: 627px;
+    border: 9.5px solid skyblue;
+    border-radius: 6px;
 }
 
 .setting2 {
