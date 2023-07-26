@@ -165,6 +165,7 @@ map :hover {
     width: 15vh;
     height: 15vh;
     border: 0px;
+    cursor: pointer;
 }
 
 #checkoutDisplay img {
@@ -341,6 +342,7 @@ map :hover {
     color: white;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 #floatar:hover {
