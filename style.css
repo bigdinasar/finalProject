@@ -168,6 +168,10 @@ map :hover {
     cursor: pointer;
 }
 
+html {
+    background-color: rgb(50, 78, 88);
+}
+
 #checkoutDisplay img {
     width: 12vh;
     height: 12vh;
