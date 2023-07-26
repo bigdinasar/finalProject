@@ -23,11 +23,15 @@ Vue.createApp({
       trafficShelf: [],
       drugsShelf: [],
       clearanceShelf: [],
+
       theft: [],
       assault: [],
       traffic: [],
       drugs: [],
       clearance: [],
+
+      stimp: [{},{},{},{}],
+      
       totalTime: 0,
       totalFine: 0,
       crimes: []
@@ -50,7 +54,9 @@ Vue.createApp({
     },
     buildShelf: function (crimes) {
       // consumes a list of crimes and returns a list of 4 lists that evenly divides out the crimes
+
       let crimeList = crimes;
+
       var total = crimeList.length;
       let perRow = Math.ceil(crimeList.length / 4);
 
@@ -76,6 +82,16 @@ Vue.createApp({
       // console.log("clear cart happened");
 
       window.location.reload();
+    },
+
+    testingForLoops: function () {
+      console.log("testingForLoops happened");
+      console.log("stimp length: ", this.stimp.length);
+      console.log("theft length: ", this.theft.length);
+      console.log("drugs: ", this.drugs)
+      for (var i = 0; i < this.theft.length; i++) {
+        console.log("testingForLoops: ", this.theft[i].crime_name)
+      }
     },
 
     payItem: function (crime) {
@@ -134,6 +150,7 @@ Vue.createApp({
 },
 created: function () {
     // this.getCrimes()
+
     this.getCrimes();
   },
   watch: {
