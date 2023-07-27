@@ -41,7 +41,7 @@
             </map>
           </div>
         </div>
-        <div class="instructions">Click on the doors to begin shopping.</div>
+        <!--<div class="instructions">Click on the doors to begin shopping.</div>-->
       </div>
 
 
@@ -102,7 +102,7 @@
             </map>
           </div>
         </div>
-        <div class="instructions">Choose an aisle to shop from.</div>
+        <!--<div class="instructions">Choose an aisle to shop from.</div>-->
       </div>
 
       <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
@@ -129,10 +129,10 @@
                 </div>
               </div>
             </div>
-            <div class="instructions">Click on an item to add a crime to your cart. You will find out what they are later.</div>
+            <!--<div class="instructions">Click on an item to add a crime to your cart. You will find out what they are later.</div>-->
           </div>
         </div>
-        <div class="instructions">Click on an item to add a crime to your cart.<br>You will find out what they are later.</div>
+        <!--<div class="instructions">Click on an item to add a crime to your cart.<br>You will find out what they are later.</div>-->
       </div>
       <div class="page" v-if="page == 4">
         <div class="wrapper">
@@ -154,13 +154,13 @@
                 </div>
               </div>
             </div>
-            <div class="instructions">Click on an item to add a crime to your cart. You will find out what they are later.</div>
+            <!--<div class="instructions">Click on an item to add a crime to your cart. You will find out what they are later.</div>-->
           </div>
           </div>
           
         </div>
-        <div class="instructions">Click on an item to add a crime to your cart.<br>You will find out what they are later.</div>
-      </div>
+        <!--<div class="instructions">Click on an item to add a crime to your cart.<br>You will find out what they are later.</div>-->
+      
       <div class="page" v-if="page == 5">
         <div class="wrapper">
           <div class="home">
@@ -181,13 +181,13 @@
                 </div>
               </div>
             </div>
-            <div class="instructions">Click on an item to add a crime to your cart. You will find out what they are later.</div>
+            <!--<div class="instructions">Click on an item to add a crime to your cart. You will find out what they are later.</div>-->
           </div>
           </div>
           
         </div>
-        <div class="instructions">Click on an item to add a crime to your cart.<br>You will find out what they are later.</div>
-      </div>
+        <!--<div class="instructions">Click on an item to add a crime to your cart.<br>You will find out what they are later.</div>-->
+      
       <div class="page" v-if="page == 6">
         <div class="wrapper">
           <div class="home">
@@ -209,104 +209,102 @@
                 </div>
               </div>
             </div>
-            <div class="instructions">Click on an item to add a crime to your cart. You will find out what they are later.</div>
+            <!--<div class="instructions">Click on an item to add a crime to your cart. You will find out what they are later.</div>-->
           </div>
           </div>
           
         </div>
-        <div class="instructions">Click on an item to add a crime to your cart.<br>You will find out what they are later.</div>
-      </div>
-      <div class="page" v-if="page == 7">
-        <div class="wrapper">
-          <div class="home">
-            <img src="20230724_120249.png" alt="logo" @click="goToPage(1); clearCart()">
-          </div>
-          <div class="cart">
-            
-            <div v-for="item in cart" class="row-body">
-                <div> <img v-bind:src="item.image" alt="crimeScene"></div>
+        <!--<div class="instructions">Click on an item to add a crime to your cart.<br>You will find out what they are later.</div>-->
+        <div class="page" v-if="page == 7">
+          <div class="wrapper">
+            <div class="home">
+              <img src="20230724_120249.png" alt="logo" @click="goToPage(1); clearCart()">
             </div>
-          </div>
-
-          <div class="setting1">
-            <div class="shelves">
-              <button class="back" @click="goToPage(2)">Back</button>
-              <div v-for="sherf in clearanceShelf" class="shelf">
-                <div v-for="item in sherf">
-                  <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
-                </div>
-              </div>
-              <div class="instructions">Click on an item to add a crime to your cart. You will find out what they are later.</div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="page" v-if="page == 8">
-        <div class="wrapper">
-          <div class="home">
-            <img src="20230724_120249.png" alt="logo" @click="goToPage(1); clearCart()">
-          </div>
-          <div class="receiptt">
-
-            <div class="row-head">
-              <div>ITEM</div>
-              <div>FINE</div>
-              <div>TIME</div>
-            </div>
-
-            <div class="scrill">
-              <div v-for="item in receipt">
-                <div v-for="crime in item" class="row-body"> 
-                  <div> {{crime.crime_name}}</div>
-                  <div>{{crime.max_penalty}}</div>
-                  <div>{{crime.jail_time}}</div>
-                </div>
-              </div>
-            </div>
-            <div class="row-footer">
-              <div>TOTAL</div>
-              <div>
-                ${{totalFine}}
-              </div>
-              <div>
-                {{totalTime}} years
-              </div>
-            </div>
-          </div>
-
-          
-
-          <div class="setting">
-            <img
-              src="crime-checkout.png"
-              alt="crimeScene"
-              usemap="#workmap"
-            />
-            <div class="instructions">Click on each item to add it to your reciept.</div>
-            <div >
-          <img id="checkoutDisplay" v-bind:src="cart[(cart.length-1)].image" alt="crimeScene" @click="payItem(cart[cart.length-1])" v-if="cart.length > 0">
-          <div id="goingToJail" v-else>
-            <div id="jailImage">
-              <img  src="crime-mugshot-2.png" alt="mug">
+            <div class="cart">
               
-              <div><p>${{totalFine}}</p></div>
-              <div><p>{{totalTime}} years!</p></div>
+              <div v-for="item in cart" class="row-body">
+                  <div> <img v-bind:src="item.image" alt="crimeScene"></div>
+              </div>
             </div>
-
-            <button id="floatar" @click="clearCart()">Restart</button>
-            <img id="floatr" src="1689610273140.png" alt="bird">
-            <div id="floatrText"> <p>{{totalFine}}, {{rating}}</p> <img  src="58adf251e612507e27bd3c32.png" alt="text"></div>
+  
+            <div class="setting1">
+              <div class="shelves">
+                <button class="back" @click="goToPage(2)">Back</button>
+                <div v-for="sherf in clearanceShelf" class="shelf">
+                  <div v-for="item in sherf">
+                    <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
+                  </div>
+                </div>
+                <!--<div class="instructions">Click on an item to add a crime to your cart. You will find out what they are later.</div>-->
+  
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="page" v-if="page == 8">
+          <div class="wrapper">
+            <div class="home">
+              <img src="20230724_120249.png" alt="logo" @click="goToPage(1); clearCart()">
+            </div>
+            <div class="receiptt">
+  
+              <div class="row-head">
+                <div>ITEM</div>
+                <div>FINE</div>
+                <div>TIME</div>
+              </div>
+  
+              <div class="scrill">
+                <div v-for="item in receipt">
+                  <div v-for="crime in item" class="row-body"> 
+                    <div> {{crime.crime_name}}</div>
+                    <div>{{crime.max_penalty}}</div>
+                    <div>{{crime.jail_time}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row-footer">
+                <div>TOTAL</div>
+                <div>
+                  ${{totalFine}}
+                </div>
+                <div>
+                  {{totalTime}} years
+                </div>
+              </div>
+            </div>
+  
             
-          
+  
+            <div class="setting">
+              <img
+                src="crime-checkout.png"
+                alt="crimeScene"
+                usemap="#workmap"
+              />
+              <!--<div class="instructions">Click on each item to add it to your reciept.</div>-->
+              <div >
+            <img id="checkoutDisplay" v-bind:src="cart[(cart.length-1)].image" alt="crimeScene" @click="payItem(cart[cart.length-1])" v-if="cart.length > 0">
+            <div id="goingToJail" v-else>
+              <div id="jailImage">
+                <img  src="crime-mugshot-2.png" alt="mug">
+                
+                <div><p>${{totalFine}}</p></div>
+                <div><p>{{totalTime}} years!</p></div>
+              </div>
+  
+              <button id="floatar" @click="clearCart()">Restart</button>
+              <img id="floatr" src="1689610273140.png" alt="bird">
+              <div id="floatrText"> <p>{{totalFine}}, {{rating}}</p> <img  src="58adf251e612507e27bd3c32.png" alt="text"></div>
             </div>
-
+              
+            
+              </div>
+  
+            </div>
           </div>
-        </div>
-        </div>
+          </div>
       </div>
-    </div>
     <script src="app.js"></script>
     <script src="imageMapResizer.js"></script>
   </body>
