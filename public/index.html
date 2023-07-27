@@ -129,6 +129,7 @@
                 </div>
               </div>
             </div>
+            <div class="instructions">Click on an item to add a crime to your cart. You will find out what they are later.</div>
           </div>
         </div>
         <div class="instructions">Click on an item to add a crime to your cart.<br>You will find out what they are later.</div>
@@ -153,6 +154,8 @@
                 </div>
               </div>
             </div>
+            <div class="instructions">Click on an item to add a crime to your cart. You will find out what they are later.</div>
+          </div>
           </div>
           
         </div>
@@ -178,6 +181,8 @@
                 </div>
               </div>
             </div>
+            <div class="instructions">Click on an item to add a crime to your cart. You will find out what they are later.</div>
+          </div>
           </div>
           
         </div>
@@ -204,6 +209,8 @@
                 </div>
               </div>
             </div>
+            <div class="instructions">Click on an item to add a crime to your cart. You will find out what they are later.</div>
+          </div>
           </div>
           
         </div>
@@ -229,6 +236,8 @@
                   <img v-bind:src="item.image" alt="crimeScene" @click="addCrime(item)">
                 </div>
               </div>
+              <div class="instructions">Click on an item to add a crime to your cart. You will find out what they are later.</div>
+
             </div>
           </div>
         </div>
@@ -274,6 +283,7 @@
               alt="crimeScene"
               usemap="#workmap"
             />
+            <div class="instructions">Click on each item to add it to your reciept.</div>
             <div >
           <img id="checkoutDisplay" v-bind:src="cart[(cart.length-1)].image" alt="crimeScene" @click="payItem(cart[cart.length-1])" v-if="cart.length > 0">
           <div id="goingToJail" v-else>
@@ -291,6 +301,7 @@
             
           
             </div>
+
           </div>
         </div>
         </div>

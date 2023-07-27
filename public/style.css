@@ -71,7 +71,8 @@ nav {
   flex-flow: column;
   gap: 5px;
   width: 22vw;
-  height: 66.6vh;
+  /* height: 66.6vh; */
+  height: 60vh;
   padding-left: 1vw;
   background-color: #f3eee8ff;
   border: 9px solid skyblue;
@@ -123,7 +124,8 @@ nav {
   flex-flow: column;
   gap: 5Spx;
   width: 22vw;
-  height: 66.6vh;
+  /* height: 66.6vh; */
+  height: 60vh;
   padding-left: 1vw;
   background-color: aliceblue;
   border: 9px solid skyblue;
