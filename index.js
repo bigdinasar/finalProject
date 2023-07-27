@@ -3,7 +3,7 @@ const cors = require("cors");
 const model = require("./model");
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(express.json());
@@ -11,10 +11,10 @@ app.use(express.json());
 // Functions not yet tested
 
 // Get All Crimes
-app.get("/crimes", function(req, res) {
-    model.Crime.find().then(crimes => {
-        res.send(crimes);
-    });
+app.get("/crimes", function (req, res) {
+  model.Crime.find().then((crimes) => {
+    res.send(crimes);
+  });
 });
 
 // // Get All Crimes By Id
@@ -30,26 +30,28 @@ app.get("/crimes", function(req, res) {
 // });
 
 // Post A Crime
-app.post("/crimes", function(req, res) {
-    const newCrime = new model.Crime({
-        crime_name: req.body.crime_name,
-        category: req.body.category,
-        max_penalty: req.body.max_penalty,
-        jail_time: req.body.jail_time,
-        image: req.body.image,
-        clearance_rate: req.body.clearance_rate
-    });
+app.post("/crimes", function (req, res) {
+  const newCrime = new model.Crime({
+    crime_name: req.body.crime_name,
+    category: req.body.category,
+    max_penalty: req.body.max_penalty,
+    jail_time: req.body.jail_time,
+    image: req.body.image,
+    clearance_rate: req.body.clearance_rate,
+  });
 
-
-    newCrime.save().then(() => {
-        res.status(201).send("Crime created.");
-    }).catch(errors => {
-        let error_list = [];
-        console.log(errors.errors);
-        for (key in errors.errors) {
-            error_list.push(errors.errors[key].properties.message)
-        }
-        res.status(422).send(error_list)
+  newCrime
+    .save()
+    .then(() => {
+      res.status(201).send("Crime created.");
+    })
+    .catch((errors) => {
+      let error_list = [];
+      console.log(errors.errors);
+      for (key in errors.errors) {
+        error_list.push(errors.errors[key].properties.message);
+      }
+      res.status(422).send(error_list);
     });
 });
 
@@ -89,6 +91,6 @@ app.post("/crimes", function(req, res) {
 //     });
 // });
 
-app.listen(port, function() {
-    console.log(`Running server on port ${port}...`);
+app.listen(port, function () {
+  console.log(`Running server on port ${port}...`);
 });
