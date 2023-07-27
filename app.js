@@ -30,11 +30,11 @@ Vue.createApp({
       drugs: [],
       clearance: [],
 
-      stimp: [{},{},{},{}],
-      
+      stimp: [{}, {}, {}, {}],
+
       totalTime: 0,
       totalFine: 0,
-      crimes: []
+      crimes: [],
     };
   },
   methods: {
@@ -68,7 +68,6 @@ Vue.createApp({
         for (let i = 0; i < row; i++) {
           rowList.push(crimeList[crimeList.length - 1]);
           crimeList.pop();
-
         }
         shelves.push(rowList);
         rowList = [];
@@ -88,9 +87,9 @@ Vue.createApp({
       console.log("testingForLoops happened");
       console.log("stimp length: ", this.stimp.length);
       console.log("theft length: ", this.theft.length);
-      console.log("drugs: ", this.drugs)
+      console.log("drugs: ", this.drugs);
       for (var i = 0; i < this.theft.length; i++) {
-        console.log("testingForLoops: ", this.theft[i].crime_name)
+        console.log("testingForLoops: ", this.theft[i].crime_name);
       }
     },
 
@@ -111,44 +110,38 @@ Vue.createApp({
         //console.log("after cart length: ", this.cart.length);
       }
     },
-    filterCrimes: function() {
-        for (crime of this.crimes) {
-            if (crime.category == "theft") {
-                this.theft.push(crime);
-            }
-            else if (crime.category == "assault") {
-                this.assault.push(crime);
-            }
-            else if (crime.category == "traffic") {
-                
-                this.traffic.push(crime);
-            }
-            else if (crime.category == "drugs") {
-                
-                this.drugs.push(crime);
-            }
-            else if (crime.category == "clearance") {
-                
-                this.clearance.push(crime);
-            }
+    filterCrimes: function () {
+      for (crime of this.crimes) {
+        if (crime.category == "theft") {
+          this.theft.push(crime);
+        } else if (crime.category == "assault") {
+          this.assault.push(crime);
+        } else if (crime.category == "traffic") {
+          this.traffic.push(crime);
+        } else if (crime.category == "drugs") {
+          this.drugs.push(crime);
+        } else if (crime.category == "clearance") {
+          this.clearance.push(crime);
         }
+      }
     },
-    getCrimes: function() {
-        fetch('http://localhost:8080/crimes')
-        .then(response => response.json()).then((data) => {
-            this.crimes = data;
-            // console.log(this.crimes);
-            this.filterCrimes();
-            this.theftShelf = this.buildShelf(this.theft);
-            this.assaultShelf = this.buildShelf(this.assault);
-            this.trafficShelf = this.buildShelf(this.traffic);
-            this.drugsShelf = this.buildShelf(this.drugs);
-            this.clearanceShelf = this.buildShelf(this.clearance);
+    getCrimes: function () {
+      fetch("https://crime-o-mart.onrender.com/crimes")
+        .then((response) => response.json())
+        .then((data) => {
+          this.crimes = data;
+          // console.log(this.crimes);
+          this.filterCrimes();
+          this.theftShelf = this.buildShelf(this.theft);
+          this.assaultShelf = this.buildShelf(this.assault);
+          this.trafficShelf = this.buildShelf(this.traffic);
+          this.drugsShelf = this.buildShelf(this.drugs);
+          this.clearanceShelf = this.buildShelf(this.clearance);
         });
-        // console.log("these are theft crimes");
-    }
-},
-created: function () {
+      // console.log("these are theft crimes");
+    },
+  },
+  created: function () {
     // this.getCrimes()
 
     this.getCrimes();
