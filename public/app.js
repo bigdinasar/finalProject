@@ -126,7 +126,7 @@ Vue.createApp({
       }
     },
     getCrimes: function () {
-      fetch("https://crime-o-mart.onrender.com/crimes")
+      fetch("https://crime-o-mart.onrender.com//crimes")
         .then((response) => response.json())
         .then((data) => {
           this.crimes = data;
